@@ -158,3 +158,12 @@ sample_n(10) %>%
   select(name, latitude)
 ```
 
+```{r}
+cleaned_meteorite_data <- q1_1_6_arrange_by_year
+```
+
+```{r}
+cleaned_meteorite_data %>% 
+write_csv(file = "cleaned_meteorite_data.csv")
+```
+
