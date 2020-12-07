@@ -1,0 +1,16 @@
+"0","```r
+library(tidyverse)
+cleaned_meteorite_data <- read_csv(\"cleaned_meteorite_data.csv\")
+```"
+"1","
+── Column specification ───────────────────────────────────────────────────────────
+cols(
+  id = col_double(),
+  name = col_character(),
+  mass_g = col_double(),
+  fell_or_found = col_character(),
+  year_of_discovery = col_double(),
+  latitude = col_double(),
+  longitud = col_double()
+)
+"

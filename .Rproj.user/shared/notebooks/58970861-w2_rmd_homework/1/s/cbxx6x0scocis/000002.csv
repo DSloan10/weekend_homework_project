@@ -1,0 +1,11 @@
+"0","```r
+fell_or_found_avg_mass <-
+cleaned_meteorite_data %>%
+  group_by(fell_or_found) %>%
+  summarise(average_mass = mean(mass_g))
+```"
+"1","`summarise()` ungrouping output (override with `.groups` argument)
+"
+"0","```r
+fell_or_found_avg_mass
+```"

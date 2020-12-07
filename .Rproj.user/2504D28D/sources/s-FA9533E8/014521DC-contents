@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+cleaned_meteorite_data <- read_csv("cleaned_meteorite_data.csv")
+```
+
+Q1.2.1 Read the cleaned data into R.
+
+```{r}
+cleaned_meteorite_data
+```
+
+Q1.2.2 Find the names and years found for the 10 largest meteorites in the data.
+
+```{r}
+top_10_meteorite_mass <-
+cleaned_meteorite_data %>%
+  slice_max(mass_g, n = 10) %>%
+  select(name, year_of_discovery)
+
+top_10_meteorite_mass
+```
+
+Q1.2.3 Find the average mass of meteorites that were recorded falling, vs. those which were just found.
+
+```{r}
+fell_or_found_avg_mass <-
+cleaned_meteorite_data %>%
+  group_by(fell_or_found) %>%
+  summarise(average_mass = mean(mass_g))
+
+fell_or_found_avg_mass
+            
+```
+
+Q1.2.4 Find the number of meteorites in each year, for every year since 2000.
+
+```{r}
+meteorites_by_year <-
+cleaned_meteorite_data %>%
+  filter(year_of_discovery >= 2000) %>%
+  group_by(year_of_discovery) %>%
+  summarise(met_per_year = n())
+
+meteorites_by_year
+
+```
+

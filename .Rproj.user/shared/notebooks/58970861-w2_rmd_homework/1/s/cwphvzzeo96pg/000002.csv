@@ -1,0 +1,10 @@
+"0","```r
+meteorites_by_year <-
+cleaned_meteorite_data %>%
+  filter(year_of_discovery >= 2000) %>%
+  group_by(year_of_discovery) %>%
+  summarise(met_per_year = n())
+
+meteorites_by_year
+
+```"
